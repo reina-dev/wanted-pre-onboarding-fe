@@ -102,6 +102,11 @@ const Background = styled.div`
   background-color: #2222;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    align-items: stretch;
+  }
 `;
 
 const Title = styled.h1`
@@ -160,6 +165,53 @@ const LogoutButton = styled.button`
   font-size: 25px;
 `;
 
+const FeedHeader = styled.div`
+  display: flex;
+  padding: 5px;
+  display: flex;
+  width: 500px;
+  height: 60px;
+  background-color: white;
+  align-items: center;
+  box-shadow: 0px 1px #d3d3d3;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  } ;
+`;
+
+const FeedName = styled.p`
+  width: 500px;
+  background-color: white;
+  display: flex;
+  padding: 0px 5px 5px 5px;
+  font-size: 12px;
+  font-weight: 700;
+`;
+
+const FeedImage = styled.img`
+  display: flex;
+  width: 500px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+const FeedFooter = styled.div`
+  display: flex;
+  padding: 5px;
+  display: flex;
+  width: 500px;
+  height: 60px;
+  background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 1px #d3d3d3;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  } ;
+`;
 export {
   LoginInput,
   LoginErrorInput,
@@ -175,4 +227,8 @@ export {
   SearchBar,
   LogoutButton,
   IconWrapper,
+  FeedHeader,
+  FeedName,
+  FeedImage,
+  FeedFooter,
 };
