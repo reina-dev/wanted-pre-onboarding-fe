@@ -62,6 +62,16 @@ const LoginButton = styled.button`
   border-radius: 5px;
 `;
 
+const LoginDisabledButton = styled.button`
+  width: 268px;
+  height: 30px;
+  padding: 5px 9px;
+  font-weight: 600;
+  color: #5a5a5a;
+  background-color: #9c9c9c;
+  border-radius: 5px;
+`;
+
 const ErrorMessage = styled.p`
   align-items: center;
   justify-content: center;
@@ -103,26 +113,66 @@ const Title = styled.h1`
 `;
 
 const HeaderNav = styled.div`
+  display: flex;
   width: 100%;
   height: 60px;
   position: sticky;
   top: 0px;
-  z-index: 40;
-  box-shadow: 0px 2px #ececec;
+  background-color: #fff;
+  box-shadow: 0px 2px #d3d3d3;
+  align-items: center;
+  justify-content: space-between;
 
   @media (max-width: 768px) {
     justify-content: space-between;
   } ;
 `;
+
+const SearchBar = styled.input`
+  width: 200px;
+  height: 36px;
+  background-color: #cccccc;
+  color: #929292;
+  margin: 2px;
+  padding: 9px 0 7px 8px;
+  margin: 5px;
+  @media (max-width: 768px) {
+    display: none;
+  } ;
+`;
+
+const IconWrapper = styled.div`
+  margin: 5px 20px 2px 20px;
+  display: flex;
+  flex-direction: row;
+`;
+
+const LogoutButton = styled.button`
+  background-color: white;
+  :hover {
+    background-color: #dfdfdf;
+  }
+  border-radius: 5px;
+  margin: 0px 10px 0px 10px;
+  display: flex;
+  height: 36px;
+  font-weight: 700;
+  font-size: 25px;
+`;
+
 export {
   LoginInput,
   LoginErrorInput,
   PasswordInput,
   PasswordErrorInput,
   LoginButton,
+  LoginDisabledButton,
   ErrorMessage,
   CenterContainer,
   Background,
   Title,
   HeaderNav,
+  SearchBar,
+  LogoutButton,
+  IconWrapper,
 };
