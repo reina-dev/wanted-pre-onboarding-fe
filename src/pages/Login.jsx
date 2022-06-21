@@ -6,6 +6,7 @@ import {
   PasswordInput,
   PasswordErrorInput,
   LoginButton,
+  LoginDisabledButton,
   ErrorMessage,
   CenterContainer,
   Background,
@@ -52,7 +53,14 @@ const LoginForm = () => {
   return (
     <Background>
       <CenterContainer>
-        <Title>Instagram</Title>
+        <Title>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png?20160616034027"
+            alt="Instagram Logo"
+            height={100}
+            style={{ padding: 5 + 'px' }}
+          />
+        </Title>
         <form method="POST" onSubmit={handleSubmit}>
           <label htmlFor="email-address">
             {isEmailValid ? (
@@ -104,9 +112,13 @@ const LoginForm = () => {
             )}
           </label>
           <br />
-          <LoginButton type="submit" disabled={!isFormValid}>
-            로그인
-          </LoginButton>
+          {isFormValid ? (
+            <LoginButton type="submit">로그인</LoginButton>
+          ) : (
+            <LoginDisabledButton type="submit" disabled>
+              로그인
+            </LoginDisabledButton>
+          )}
         </form>
       </CenterContainer>
     </Background>
