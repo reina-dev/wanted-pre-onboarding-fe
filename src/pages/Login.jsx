@@ -1,5 +1,16 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {
+  LoginInput,
+  LoginErrorInput,
+  PasswordInput,
+  PasswordErrorInput,
+  LoginButton,
+  ErrorMessage,
+  CenterContainer,
+  Background,
+  Title,
+} from '../components/Styled';
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -39,47 +50,38 @@ const LoginForm = () => {
     }
   };
   return (
-    <div>
-      <h2>Sign in</h2>
-      <form method="POST" onSubmit={handleSubmit}>
-        <label htmlFor="email-address">
-          {isEmailValid ? (
-            <input
-              id="email"
-              name="email"
-              typr="email"
-              placeholder="이메일"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          ) : (
-            <span>
-              <input
+    <Background>
+      <CenterContainer>
+        <Title>Instagram</Title>
+        <form method="POST" onSubmit={handleSubmit}>
+          <label htmlFor="email-address">
+            {isEmailValid ? (
+              <LoginInput
                 id="email"
                 name="email"
-                typr="email"
-                placeholder="이메일"
+                type="email"
+                placeholder="전화번호, 사용자 이름 또는 이메일"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <p>이메일 형식이 올바르지 않습니다.</p>
-            </span>
-          )}
-        </label>
-        <br />
-        <label htmlFor="password">
-          {isPasswordValid ? (
-            <input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="비밀번호"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          ) : (
-            <span>
-              <input
+            ) : (
+              <span>
+                <LoginErrorInput
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="전화번호, 사용자 이름 또는 이메일"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <ErrorMessage>이메일 형식이 올바르지 않습니다.</ErrorMessage>
+              </span>
+            )}
+          </label>
+          <br />
+          <label htmlFor="password">
+            {isPasswordValid ? (
+              <PasswordInput
                 id="password"
                 name="password"
                 type="password"
@@ -87,16 +89,27 @@ const LoginForm = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <p>비밀번호가 올바르지 않습니다.</p>
-            </span>
-          )}
-        </label>
-        <br />
-        <button type="submit" disabled={!isFormValid}>
-          Sign in
-        </button>
-      </form>
-    </div>
+            ) : (
+              <span>
+                <PasswordErrorInput
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="비밀번호"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <ErrorMessage>비밀번호가 올바르지 않습니다.</ErrorMessage>
+              </span>
+            )}
+          </label>
+          <br />
+          <LoginButton type="submit" disabled={!isFormValid}>
+            로그인
+          </LoginButton>
+        </form>
+      </CenterContainer>
+    </Background>
   );
 };
 
