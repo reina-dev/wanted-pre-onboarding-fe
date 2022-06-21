@@ -35,11 +35,11 @@ const Header = () => {
       </Link>
       <SearchBar placeholder="검색"></SearchBar>
       <IconWrapper>
-        <FiHome size="30" />
-        <FiSend size="30" />
-        <FiPlusSquare size="30" />
-        <FiCompass size="30" />
-        <FiHeart size="30" />
+        <FiHome size="30" style={{ margin: 5 + 'px' }} />
+        <FiSend size="28" style={{ margin: 5 + 'px' }} />
+        <FiPlusSquare size="30" style={{ margin: 5 + 'px' }} />
+        <FiCompass size="30" style={{ margin: 5 + 'px' }} />
+        <FiHeart size="30" style={{ margin: 5 + 'px' }} />
         <LogoutButton onClick={Logout}>Logout</LogoutButton>
       </IconWrapper>
     </HeaderNav>
