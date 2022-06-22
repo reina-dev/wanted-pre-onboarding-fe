@@ -98,8 +98,8 @@ const Background = styled.div`
   flex-direction: column;
   flex-wrap: column;
   width: 100%;
-  height: 100vh;
-  background-color: #2222;
+  height: 100%;
+  background-color: #fff1;
   align-items: center;
   justify-content: center;
 
@@ -187,6 +187,9 @@ const FeedName = styled.p`
   padding: 0px 5px 5px 5px;
   font-size: 12px;
   font-weight: 700;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const FeedImage = styled.img`
@@ -210,8 +213,73 @@ const FeedFooter = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-  } ;
+  }
 `;
+
+const CommentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  display: flex;
+  width: 500px;
+  background-color: white;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const CommentName = styled.span`
+  display: flex;
+  padding: 2px;
+  font-size: 12px;
+  font-weight: 700;
+`;
+
+const CommentContent = styled.span`
+  display: flex;
+  padding: 2px;
+  font-size: 12px;
+`;
+
+const CommentInput = styled.input`
+  display: flex;
+  width: 380px;
+  height: 36px;
+  background-color: #fff;
+  margin: 5px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const CommentButton = styled.button`
+  width: 68px;
+  height: 30px;
+  padding: 5px 9px;
+  font-weight: 600;
+  color: white;
+  background-color: #0095f6;
+  border-radius: 5px;
+`;
+
+const SavedComment = styled.div`
+  display: flex;
+  width: 495px;
+  background-color: white;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const FeedBox = styled.div`
+  margin: 10px;
+  box-shadow: 2px 2px 2px 2px #d3d3d3;
+`;
+
 export {
   LoginInput,
   LoginErrorInput,
@@ -231,4 +299,11 @@ export {
   FeedName,
   FeedImage,
   FeedFooter,
+  CommentContainer,
+  CommentName,
+  CommentContent,
+  CommentInput,
+  CommentButton,
+  SavedComment,
+  FeedBox,
 };
